@@ -1,0 +1,14 @@
+/Users/navkaransarao/compiler/MyCompiler/bin/Debug/net9.0/MyCompiler
+/Users/navkaransarao/compiler/MyCompiler/bin/Debug/net9.0/MyCompiler.deps.json
+/Users/navkaransarao/compiler/MyCompiler/bin/Debug/net9.0/MyCompiler.runtimeconfig.json
+/Users/navkaransarao/compiler/MyCompiler/bin/Debug/net9.0/MyCompiler.dll
+/Users/navkaransarao/compiler/MyCompiler/bin/Debug/net9.0/MyCompiler.pdb
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.GeneratedMSBuildEditorConfig.editorconfig
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.AssemblyInfoInputs.cache
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.AssemblyInfo.cs
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.csproj.CoreCompileInputs.cache
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.dll
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/refint/MyCompiler.dll
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.pdb
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.genruntimeconfig.cache
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/ref/MyCompiler.dll
