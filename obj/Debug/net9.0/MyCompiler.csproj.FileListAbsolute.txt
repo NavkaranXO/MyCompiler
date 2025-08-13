@@ -12,3 +12,4 @@
 /Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.pdb
 /Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.genruntimeconfig.cache
 /Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/ref/MyCompiler.dll
+/Users/navkaransarao/compiler/MyCompiler/obj/Debug/net9.0/MyCompiler.sourcelink.json

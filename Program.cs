@@ -1,12 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-string source = "Hello how are you?";
+using MyCompiler.Tokens;
+
+string source = "!=<=-*";
 
 Lexer lexer = new Lexer(source);
 
-while (lexer.Peek() != '\0')
+Token token = lexer.getToken();
+
+while (token._tokenType != TokenType.EOF)
 {
-    Console.Write(lexer._currentChar);
-    lexer.NextChar();
+    Console.WriteLine(token._tokenType);
+    token = lexer.getToken();
 }
 
