@@ -37,6 +37,17 @@ public class Lexer
         }
     }
 
+    public void SkipComment()
+    {
+        if (_currentChar == '#')
+        {
+            while (_currentChar != '\n')
+            {
+                NextChar();
+            }
+        }
+    }
+
     public void Abort(string message)
     {
         Console.WriteLine($"Lexing Error: {message}");
@@ -46,7 +57,52 @@ public class Lexer
     public Token getToken()
     {
         SkipWhitespace();
-        Token token = null;
+        SkipComment();
+
+        //Checking for digits
+        if (char.IsDigit(_currentChar))
+        {
+            int startPos = _currentPosition;
+            //Moving to next char until there is no number char
+            while (char.IsDigit(Peek()))
+            {
+                NextChar();
+            }
+            //Peeking to see if there is a decimal
+            if (Peek() == '.')
+            {
+                NextChar();
+                //Atleast one char shoudl be digit after decimal
+                if (!char.IsDigit(Peek()))
+                {
+                    Abort("Invalid character in number!");
+                }
+                while (char.IsDigit(Peek()))
+                {
+                    NextChar();
+                }
+            }
+            //Move onto the next char as otherwise it will remain on the same number tokenizing it forever
+            NextChar();
+            string newToken = _source[startPos.._currentPosition];
+            return new Token(newToken, TokenType.NUMBER);
+        }
+
+        //check if keyword or identifier
+        if (char.IsLetter(_currentChar))
+        {
+            int startPos = _currentPosition;
+
+            //first word cannot be digit for ident or keyword but the others can be
+            while (char.IsLetterOrDigit(Peek()))
+            {
+                NextChar();
+            }
+
+            string newToken = _source[startPos.._currentPosition];
+        }
+
+        Token? token = null;
         switch (_currentChar)
         {
             case '+':
@@ -107,6 +163,7 @@ public class Lexer
                 else
                     token = new Token(_currentChar.ToString(), TokenType.LT);
                 break;
+
             case '!':
                 if (Peek() == '=')
                 {
@@ -119,11 +176,29 @@ public class Lexer
                     Abort("Expected !=, Got !" + Peek().ToString());
                 break;
 
+            case '\"':
+                NextChar();
+                int startPos = _currentPosition;
+
+                while (_currentChar != '\"')
+                {
+                    if (_currentChar == '\n' || _currentChar == '\t' || _currentChar == '\r')
+                    {
+                        Abort("Invalid token in string: " + _currentChar);
+                    }
+                    NextChar();
+                }
+                string newToken = _source[startPos.._currentPosition];
+                token = new Token(newToken, TokenType.STRING);
+                break;
+
             default:
                 Abort($"Invalid Token {_currentChar}");
                 break;
         }
         NextChar();
+#pragma warning disable CS8603 // Possible null reference return.
         return token;
+#pragma warning restore CS8603 // Possible null reference return.
     }
 }

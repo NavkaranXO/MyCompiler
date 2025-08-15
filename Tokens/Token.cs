@@ -1,4 +1,5 @@
 namespace MyCompiler.Tokens;
+
 public class Token
 {
     public readonly string _token;
@@ -8,4 +9,5 @@ public class Token
         _token = token;
         _tokenType = tokenType;
     }
+    
 }

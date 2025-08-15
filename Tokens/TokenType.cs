@@ -4,7 +4,7 @@ public enum TokenType
     EOF = -1,
     NEWLINE = 0,
     NUMBER = 1,
-    INDENT = 2,
+    IDENT = 2,
     STRING = 3,
 
     //Keywords

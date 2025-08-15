@@ -2,7 +2,7 @@
 
 using MyCompiler.Tokens;
 
-string source = "!=<=-*";
+string source = "!= #Comment.  \n #12345.2334 \n /  \"hello\"<=-*";
 
 Lexer lexer = new Lexer(source);
 
